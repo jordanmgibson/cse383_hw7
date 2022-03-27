@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Homework 7 Part 2</title>
+    </head>
+    <body>
+	    <canvas id="canvas" width="1000" height="500"></canvas>
+	    <script>
+		    var triangles = document.getElementById("canvas").getContext("2d");
+		    for (let x = 1; i <= 20; i++) {
+			    triangles.beginPath();
+			    let XCoord = Math.random() * 950;
+			    let YCoord = Math.random() * 450;
+			    triangles.moveTo(XCoord, YCoord);
+			    triangles.lineTo(XCoord + Math.random() * 50, YCoord);
+			    triangles.lineTo(XCoord, YCoord + Math.random() * 50);
+			    triangles.fill();	
+		    }
+	    </script>
+	</body>
+</html>
