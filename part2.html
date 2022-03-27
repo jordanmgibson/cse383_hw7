@@ -17,12 +17,12 @@
             }
         </style>
 	</head>
-    <body onload="doRectangle()">
+    <body onload="drawTriangles()">
         <canvas id="TriangleCanvas" width="1300" height="700"></canvas>
 		<script>
             const canvas = document.getElementById("TriangleCanvas");
             var context = canvas.getContext('2d');
-            function doRectangle() {
+            function drawTriangles() {
                 if (canvas.getContext) {
                     for (let i = 1; i <= 20; i++) {
 						let xCoord = 100 + (1200 * Math.random());
