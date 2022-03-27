@@ -26,13 +26,11 @@
         </div>
         <script>
             function closeMessage() {
-                var div = document.getElementById("message");
-                div.style.visibility = "hidden";
+                document.getElementById("message").style.visibility = "hidden";
             }
             function showMessage() {
-                var div = document.getElementById("message");
-                $('#message').html($('#txtMessage').val());
-                div.style.visibility = "visible";
+                document.getElementById("message").innerHTML = document.getElementById("txtMessage").value;
+			    document.getElementById("message").style.visibility = "visible";
                 setTimeout(closeMessage, 2000)
             }
         </script>
