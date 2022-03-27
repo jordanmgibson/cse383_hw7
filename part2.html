@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+	<head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Homework 7 Part 2</title>
-    </head>
-    <body onload="triangleGen()">
-	    <canvas id="canvas" width="1000" height="500"></canvas>
-	    <script>
-			function triangleGen() {
-		    var triangles = document.getElementById("canvas").getContext("2d");
-		    for (let x = 1; i <= 20; i++) {
-			    triangles.beginPath();
-			    let XCoord = Math.random() * 950;
-			    let YCoord = Math.random() * 450;
-			    triangles.moveTo(XCoord, YCoord);
-			    triangles.lineTo(XCoord + Math.random() * 50, YCoord);
-			    triangles.lineTo(XCoord, YCoord + Math.random() * 50);
-				draw.fillStyle = "rgb(" + Math.random() * 255 + "," + Math.random() * 255 + "," + Math.random() * 255 + ")";
-			    triangles.fill();	
-		    }
-			}
-	    </script>
-	</body>
+        <style>
+            html {
+                height: 100%;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            canvas {
+                margin: 0;
+                left: 0;
+                top: 0;
+            }
+        </style>
+	</head>
+    <body onload="doRectangle()">
+        <canvas id="TriangleCanvas" width="1300" height="700"></canvas>
+		<script>
+            const canvas = document.getElementById("TriangleCanvas");
+            var context = canvas.getContext('2d');
+            function doRectangle() {
+                if (canvas.getContext) {
+                    for (let i = 1; i <= 20; i++) {
+						let xCoord = 100 + (1200 * Math.random());
+						let yCoord = 100 + (500 * Math.random());
+						context.beginPath();
+    					context.moveTo(xCoord, yCoord);
+    					context.lineTo(xCoord + (100 * Math.random()), yCoord);
+    					context.lineTo(xCoord, yCoord + (100 * Math.random()));
+						context.fillStyle = "rgb(" + Math.random() * 255 + ", " + Math.random() * 255 + ", " +  Math.random() * 255 + ")";
+						context.fill();
+                    }
+				}
+            }
+        </script>
+    </body>
 </html>
